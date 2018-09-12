@@ -1,0 +1,29 @@
+2018-09-11
+-sudo update-pc	
+	+Instalados monodevelop y preresquisitos de android-studio
+-Bitnami.com
+	+Descargado Lamp
+-Instalar: Marcar bit de ejecución y doble click(Esperar un poco)
+	+password: sistemas
+-Ejecuta Lamp
+	+manager-linux-x64.run(En el directorio de lampstack)
+	+Open phpMyAdmin
+		*Usuario: root
+		*Password: sistemas
+-Creado dbprueba (con las opciones por defecto)
+	+Crear tabla categoria{
+	create table categoria(
+		id serial primary key,
+		nombre varchar(50) not null unique
+	);}
+	+insertar en categoria{
+		insert into categoria (nombre) values ('categoria 1');
+		insert into categoria (nombre) values ('categoria 2');
+		insert into categoria (nombre) values ('categoria 3');
+	}
+-Configurar git
+	git config --global user.name voroferrer
+	git config --global user.email 2dam.vferrer@institutoserpis.org
+	git config --global push.default simple
+
+	
