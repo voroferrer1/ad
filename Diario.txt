@@ -16,6 +16,7 @@
 		id serial primary key,
 		nombre varchar(50) not null unique
 	);}
+2018-09-12
 	+insertar en categoria{
 		insert into categoria (nombre) values ('categoria 1');
 		insert into categoria (nombre) values ('categoria 2');
@@ -26,4 +27,10 @@
 	git config --global user.email 2dam.vferrer@institutoserpis.org
 	git config --global push.default simple
 
-	
+-descargar conector mysql para .net
+2018-09-14
+-Propuesta de instalar Ubuntu 16.04 en VirtualBox, e instalar monodevelop en la maquina virtual.
+-Descarga del "conector" de mysql para .net desde la pagina oficial
+-"The host localhost does not support SSL connections."Para arreglar esto :
+	+Comentado la linea skip-name-resolve=1(#) en el archivo de configuración de la base de datos.	
+	+Añadido ssl-mode=none en la connection string.
