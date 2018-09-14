@@ -34,3 +34,5 @@
 -"The host localhost does not support SSL connections."Para arreglar esto :
 	+Comentado la linea skip-name-resolve=1(#) en el archivo de configuración de la base de datos.	
 	+Añadido ssl-mode=none en la connection string.
+-Sustituido MySQLConnection por IDbConnection.
+-Expandido ejercicio de CMySQL
