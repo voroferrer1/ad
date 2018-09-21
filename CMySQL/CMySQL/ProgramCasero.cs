@@ -7,17 +7,17 @@ namespace CMySQL
     class MainClass
     {
 		private static string[] getFieldNames(IDataReader dataReader){
-			int fieldCount = dataReader.FieldCount;
-			string[] fieldNames = new string[fieldCount];
-			for (int index = 0; index < fieldCount; index++){
-				fieldNames[index] = dataReader.GetName(index);
+			List<string> fieldList = new List<string>();
+			fields.Add(dataReader.FieldCount.ToString());
+			for (int index = 0; index < dataReader.FieldCount; index++)
+			{
+				fields.Add("Columna = " + dataReader.GetName(index)); 
 			}
-
-			return fieldNames;
+			return fieldList.ToArray();
 		}
         public static void Main(string[] args)
         {
-			IDbConnection dbConnection = new MySqlConnection( 
+			IDbConnection dbConnection = new MySqlConnection(
 				"server=localhost;database=dbprueba;user=root;password=sistemas; ssl-mode=none;");
 			dbConnection.Open();
 
@@ -27,7 +27,7 @@ namespace CMySQL
 
 			string[] fieldNames = getFieldNames(dataReader);
 			foreach (string fieldName in fieldNames)
-				Console.WriteLine("Columna = "+fieldName);
+				Console.WriteLine(fieldName);
 			/*Console.WriteLine("Numero de Columnas="+dataReader.FieldCount);
 			for (int index = 0; index < dataReader.FieldCount;index++){
 				Console.WriteLine("Columna{0}={1}", index, dataReader.GetName(index));
