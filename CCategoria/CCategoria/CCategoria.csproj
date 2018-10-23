@@ -72,6 +72,13 @@
     <Compile Include="CategoriaWindow.cs" />
     <Compile Include="gtk-gui\CCategoria.CategoriaWindow.cs" />
     <Compile Include="App.cs" />
+    <Compile Include="CategoriaDao.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Projects\CSerpisGtk\CSerpisGtk\CSerpisGtk.csproj">
+      <Project>{91496288-4FC3-4D5C-A5FB-69AAC9530D50}</Project>
+      <Name>CSerpisGtk</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
