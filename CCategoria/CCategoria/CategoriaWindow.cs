@@ -5,7 +5,7 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using CCategoria;
 using System.Reflection;
-namespace CCategoria
+namespace z
 {
     public partial class CategoriaWindow : Gtk.Window
     {

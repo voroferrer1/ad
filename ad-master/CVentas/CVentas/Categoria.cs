@@ -1,24 +1,27 @@
 ﻿using System;
-namespace CCategoria
+namespace Serpis.Ad.Ventas
 {
     public class Categoria
     {
 		private ulong id;
-		private string nombre;
-        public Categoria()
-        {
+		private string nombre = "";
+
+		public Categoria() {
         }
-		public Categoria(ulong id,string nombre){
+
+		public Categoria(ulong id, string nombre) {
 			this.id = id;
 			this.nombre = nombre;
-		}
-		public ulong Id{
-			get{return id;}
+        }
+
+		public ulong Id {
+			get { return id; }
 			set { id = value; }
 		}
-		public string Nombre{
+
+		public string Nombre {
 			get { return nombre; }
 			set { nombre = value; }
 		}
-    }
+	}
 }
