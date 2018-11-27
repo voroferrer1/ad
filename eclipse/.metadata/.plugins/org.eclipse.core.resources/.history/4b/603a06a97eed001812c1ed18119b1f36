@@ -1,0 +1,25 @@
+package serpis.ad;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Prueba {
+
+	public static void main(String[] args) throws SQLException{
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/dbprueba","root","sistemas");	
+		//TODO select,insert...
+		Statement statement = connection.createStatement();
+		ResultSet resultSet = statement.executeQuery("select * from articulo");
+		while(resultSet.next()) {
+			System.out.printf("%s %-25s %s %s \n",
+					resultSet.getObject(1),resultSet.getObject(2),resultSet.getObject(3),resultSet.getObject(4));
+		}
+		statement.close();
+		connection.close();
+
+
+	}
+}
