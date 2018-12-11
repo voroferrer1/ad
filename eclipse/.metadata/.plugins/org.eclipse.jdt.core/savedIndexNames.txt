@@ -1,4 +1,0 @@
-INDEX VERSION 1.131+/home/vorper/ad/eclipse/.metadata/.plugins/org.eclipse.jdt.core
-1797494346.index
-2213398356.index
-474622492.index
