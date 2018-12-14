@@ -29,7 +29,6 @@ dependencies {
 	//compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
 	implementation 'mysql:mysql-connector-java:8.0.13'
 	
-	//Hace falta importar GSerpisConsole
 	implementation files('../GSerpisConsole/build/libs/GSerpisConsole.jar')
 }
 

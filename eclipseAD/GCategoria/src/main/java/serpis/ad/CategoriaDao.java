@@ -1,7 +1,11 @@
 package serpis.ad;
 
+import java.math.BigInteger;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CategoriaDao {
@@ -24,7 +28,17 @@ public class CategoriaDao {
 			return update(categoria);
 	}
 	
+	private static final String select = "select id, nombre from categoria where id =(?)"; 
 	public static Categoria load(long id) throws SQLException {
+		PreparedStatement preparedStatement = App.getInstance().getConnection().prepareStatement(select);
+		preparedStatement.setObject(1, id);
+		ResultSet result = preparedStatement.executeQuery();
+		if(result.next()) {
+			Categoria categoria = new Categoria();
+			categoria.setId(result.getLong("id"));
+			categoria.setNombre((String)result.getObject("nombre"));
+			return categoria;
+		}
 		return null;
 	}
 	
@@ -32,7 +46,18 @@ public class CategoriaDao {
 		return -1;
 	}
 
+	private static final String selectAll = "select id, nombre from categoria"; 
 	public static List<Categoria> getAll() throws SQLException {
-		return null;
+		List<Categoria> categorias = new ArrayList<>();
+		Statement statement = App.getInstance().getConnection().createStatement();
+		ResultSet resultSet = statement.executeQuery(selectAll);
+		while (resultSet.next()) {
+			Categoria categoria = new Categoria();
+			//categoria.setId( ((BigInteger)resultSet.getObject("id")).longValue() );
+			categoria.setId( resultSet.getLong("id") );
+			categoria.setNombre((String)resultSet.getObject("nombre"));
+			categorias.add(categoria);
+		}
+		return categorias;
 	}
 }
