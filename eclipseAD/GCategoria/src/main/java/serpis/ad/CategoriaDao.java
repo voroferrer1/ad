@@ -1,6 +1,6 @@
 package serpis.ad;
 
-import java.math.BigInteger;
+//import java.math.BigInteger;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +16,8 @@ public class CategoriaDao {
 		preparedStatement.setObject(1, categoria.getNombre());
 		return preparedStatement.executeUpdate();
 	}
-
+	
+	//private static String updateSql = "update categoria set nombre=? where id=?";
 	private static int update(Categoria categoria) throws SQLException {
 		return -1; //TODO implementar
 	}
@@ -41,7 +42,7 @@ public class CategoriaDao {
 		}
 		return null;
 	}
-	
+	//private static final String delete = "delete from categoria where id =(?)"; 
 	public static int delete(long id) throws SQLException {
 		return -1;
 	}
