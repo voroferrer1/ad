@@ -25,11 +25,13 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
-    
-    implementation 'mysql:mysql-connector-java:8.0.13'
-    
+
     implementation 'org.hibernate:hibernate-core:5.4.0.Final'
     
-    implementation files('../HSerpis/build/libs/HSerpis.jar')
+	implementation 'mysql:mysql-connector-java:8.0.13'    
+
+	implementation files('../GSerpisConsole/build/libs/GSerpisConsole.jar')
+	implementation files('../HSerpis/build/libs/HSerpis.jar')
+	
 }
 

@@ -7,12 +7,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Categoria {
-	
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String nombre;
-	
 	
 	public Long getId() {
 		return id;
@@ -31,5 +29,4 @@ public class Categoria {
 	public String toString() {
 		return String.format("[%s]-%s", id, nombre);
 	}
-	
 }

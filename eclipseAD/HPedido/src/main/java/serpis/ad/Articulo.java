@@ -11,29 +11,15 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Articulo {
-	
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String nombre;
 	@ManyToOne
-	@JoinColumn(name = "categoria")
+	@JoinColumn(name="categoria")
 	private Categoria categoria;
 	private BigDecimal precio;
 	
-
-	public Categoria getCategoria() {
-		return categoria;
-	}
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-	public BigDecimal getPrecio() {
-		return precio;
-	}
-	public void setPrecio(BigDecimal precio) {
-		this.precio = precio;
-	}
 	public Long getId() {
 		return id;
 	}
@@ -45,6 +31,18 @@ public class Articulo {
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	public Categoria getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+	public BigDecimal getPrecio() {
+		return precio;
+	}
+	public void setPrecio(BigDecimal precio) {
+		this.precio = precio;
 	}
 
 }
